@@ -1,0 +1,580 @@
+/* Fonts */
+@font-face { font-family: Montserrat; src: url("./fonts/Montserrat-Regular.ttf"); }
+@font-face { font-family: Montserrat; font-weight: lighter; src: url("./fonts/Montserrat-Light.ttf");}
+@font-face { font-family: Montserrat; font-weight: bold; src: url("./fonts/Montserrat-Bold.ttf");}
+@font-face { font-family: Montserrat; font-weight: bolder; src: url("./fonts/Montserrat-Black.ttf");}
+@font-face { font-family: Montserrat; font-weight: medium; src: url("./fonts/Montserrat-Medium.ttf");}
+@font-face { font-family: Montserrat; font-style: italic; src: url("./fonts/Montserrat-Italic.ttf");}
+
+/*Logo*/
+#logo {
+    position: absolute;
+    top: 32px;
+    left: 64px;
+    width: 112px;
+}
+
+#linkedin {
+    position: absolute;
+    top: 40px;
+    right: 64px;
+    width: 32px;
+}
+
+/*Navigation Bar*/
+nav ul {
+    list-style: none;
+    padding: 32px 16px 0 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 50px;
+    padding-right: 50px;
+}
+
+nav ul li:last-child {
+    margin: 0px;
+    padding: 0px;
+}
+
+nav a {
+    font-family: Montserrat;
+    font-weight: bolder;
+    color: #657DAC;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: #F25656;
+}
+
+/*Result picture*/
+.result-img, .result-text, .box {
+    text-align: center;
+    padding: 0 auto;
+    margin: 0 auto;
+}
+
+.result-img, .contact-boxes {
+    display: flex;
+    align-items: center;
+}
+
+#lost, #won {
+    flex: 5;
+}
+
+.result-buttons {
+    flex: 3;
+    max-height: 128px;
+    border: none;
+    border-radius: 10px;
+    color: #fbfbfb;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: larger;
+    padding: 16px 0;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+    margin: 16px 0;
+}
+
+.bad-buttons {
+    background-color: #F25656;
+}
+
+.good-buttons {
+    background-color: #657DAC;
+}
+
+.result-buttons p {
+    padding: 0 16px;
+    margin: 0 16px;
+}
+
+/*Main Content*/
+div .page-title {
+    font-size: 200%;
+    font-weight: bold;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+section {
+    height: 100%;
+    margin: 0 20%;
+    border: 0;
+    padding: 0;
+}
+
+
+.main-area {
+    display: flex;
+}
+
+/*Progress Bar*/
+#progress-wrapper {
+    position: relative;
+    margin: 0 16px;
+    padding: 0;
+    border-radius: 10px;
+    height: 32px;
+}
+
+#progress {
+    position: absolute;
+    height: 32px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(61, 59, 56,.3);
+    border-radius: 10px;
+    margin: auto;
+    padding: 0;
+}
+
+.dotw {
+    font-weight: bold;
+    color: #fff4ec;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    margin: auto;
+    z-index: 20;
+    cursor: pointer;
+}
+
+#progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #0FDDAB;
+    height: 100%;
+    width: 0%;
+    overflow: hidden;
+}
+
+#on-hover-day {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #FE874A;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: 30;
+    padding: 6px 0;
+}
+
+/*Table*/
+#main-selector {
+    position: relative;
+    float: left;
+    width: 432px;
+    border-spacing: 16px;
+    border-collapse: separate;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+#main-selector td {
+    position: relative;
+    width: 88px;
+    height: 88px;
+    background: #575451;
+    border-radius: 10px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+@keyframes glowUp {
+    from {background-color: #898480;}
+    to {background-color: #FFE9D9;}
+}
+
+#main-selector td:hover {
+    animation-name: glowUp;
+    animation-duration: 0.5s;
+    background-color: #FFE9D9;
+}
+
+@keyframes glowLoop {
+    from {background-color: #3d3b38;}
+    50% {background-color: #FFE9D9;}
+    to {background-color: #3d3b38;}
+}
+
+td img {
+    position: relative;
+    z-index: 20;
+    cursor: pointer;
+}
+
+.tick-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color:rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 100%;
+    border: 8px solid #0FDDAB;
+    box-sizing: border-box;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    display: none;
+    animation-name: glowLoop;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+}
+
+/*Tooltip box*/
+.tooltip {
+    flex: 1;
+    float: none;
+    display: block;
+    overflow: hidden;
+    background: #fff4ec;
+    border-radius: 10px;
+    margin: 16px;
+}
+.tooltip-box:not(#default-tooltip) {
+    display: none;
+}
+.tooltip-box {
+    padding: 16px 32px 0 32px;
+    height: 128px;
+    font-size: small;
+    position: relative;
+}
+
+.tooltip-title {
+    font-size: 200%;
+    font-weight: bold;
+    margin: 16px 0 0 0;
+    padding: 0;
+}
+
+.question {
+    position: absolute;
+    top: 32px;
+    right: 32px;
+    display: flex;
+    align-items: center;
+    background-color: #0FDDAB;
+    border-radius: 10px;
+    color: #fff4ec;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: larger;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    height: 32px;
+    width: 32px;
+    margin: 0;  
+}
+
+.question img {
+    width: 50%;
+    padding: 20% 25%;
+}
+
+.shopping-cart {
+    font-size: smaller;
+    font-style: italic;
+    margin: 0;
+}
+
+#countertop li {
+    margin: 16px auto;
+}
+
+.part-of-tooltip {
+    position: relative;
+    margin: 0 32px;
+}
+
+/*Button*/
+.dish-buttons {
+    background-color: #0FDDAB;
+    border: none;
+    border-radius: 10px;
+    color: #fff4ec;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: larger;
+    padding: 16px 0;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+    margin: 16px 0;
+}
+
+@keyframes button-hover {
+    from {background-color: #0FDDAB;}
+    to {background-color: #FE874A;}
+}
+
+#game-over {
+    animation-name: unset;
+    background-color: #F25656;
+}
+
+/*Overlay*/
+#overlay, .dish, .overlay-buttons {
+    display: none;
+}
+.overlay-buttons p {
+    padding: 0;
+    margin: 0;
+}
+
+.button-tooltip {
+    padding: 0 auto;
+    font-style: italic;
+    font-size: xx-small;
+}
+
+
+#overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 100;
+    padding: 0;
+    margin: 0;
+}
+
+#cooking-done {
+    position: relative;
+    top: 30%;
+    left: 28%;
+    width: 40%;
+    height: 40%;
+    border-radius: 10px;
+    margin: 0;
+    padding: 32px;
+    background-color: #fff4ec;
+}
+
+#dish-area {
+    float: left;
+    width: 50%;
+    height: 100%;
+    background-color: #F3DDCE;
+    border-radius: 10px;
+    align-items: center;
+    padding: auto;
+}
+
+.dish {
+    position: relative;
+    width: 90%;
+    margin: auto;
+}
+
+#dish-text {
+    padding: 0 0 0 32px;
+    margin: 0 auto;
+}
+
+#desc {
+    font-size: small;
+    margin-bottom: 32px;
+}
+
+.dish-buttons:hover, .home a:hover {
+    animation: button-hover .5s;
+    background-color: #FE874A;
+}
+
+#dish-title {
+    text-align: center; 
+    margin-top: 8px;
+    font-size: x-large;
+    font-weight: bold;
+}
+
+/*Between games*/
+.out-of-stock {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #fff4ec;
+    font-weight: bold;
+    background-color:rgba(66, 66, 66, 0.8);
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    display: none;
+    margin: 0;
+    padding: 16px auto;
+    z-index: 50;
+}
+
+
+/*Decoration*/
+body{
+    background-color: #F3DDCE;
+    font-family: Montserrat;
+    color: #657DAC;
+    overflow: unset;
+    padding: 0;
+    margin: 0;
+}
+
+body:not(.index) {
+    background-image: url("./images/BG2.svg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: bottom;
+    background-size: 100%;
+    overflow: hidden;
+}
+
+div {
+    overflow: hidden;
+}
+
+/*Leaves wiggling*/
+@keyframes wiggle {
+    0% {bottom: -200px}
+    60% {bottom: -128px; transform: rotate(0deg)}
+    70% {transform: rotate(0deg)}
+    75% {transform: rotate(-10deg)}
+    80% {transform: rotate(10deg)}
+    85% {transform: rotate(-10deg)}
+    90% {transform: rotate(0deg)}
+    92% {transform: rotate(-5deg)}
+    94% {transform: rotate(0deg)}
+    96% {transform: rotate(2deg)}
+    97% {transform: rotate(0deg)}
+    98% {transform: rotate(-1deg)}
+    100% {transform: rotate(0deg)}
+}
+
+div .bottom-left {
+    position: absolute;
+    bottom: -128px;
+    left: -224px;
+    transform-origin: 250px 437.5px;
+    animation-name: wiggle;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+}
+
+div .bottom-right {
+    position: absolute;
+    bottom: -128px;
+    right: -224px;
+    transform-origin: 250px 437.5px;
+    animation-name: wiggle;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+}
+
+/*Contact*/
+.box {
+    flex: 5;
+    background-color: #fff4ec;
+    border-radius: 10px;
+    height: 276px;
+    margin: 16px;
+    padding: 48px;
+}
+
+.contact-boxes {
+    padding: 0 64px;
+}
+
+.box img {
+    width: 70%;
+}
+
+/*Home*/
+#index-section {
+    margin: 0;
+    overflow: hidden;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    padding: 64px 0;
+    margin: 64px 0;
+}
+
+.home:first-child {
+    margin-top: 32px;
+}
+
+.home:last-child {
+    margin-bottom: 0;
+}
+
+.home img {
+    flex: 3;
+    margin: 0;
+    padding: 0 10% 0 0;
+}
+
+.home div {
+    flex: 4;
+    padding: 0 5% 0 10%;
+    margin: 0;
+}
+
+.home:nth-child(even) {
+    background-color: #FFB38D;
+    width: 100%;
+}
+
+.home:nth-child(even) img {
+    flex: 3;
+    padding: 0 5% 0 10%;
+    margin: 0;
+}
+
+.home:nth-child(even) div {
+    flex: 4;
+    margin: 0;
+    padding: 0 10% 0 0;
+}
+
+.home a {
+    background-color: #0FDDAB;
+    display: block;
+    border-radius: 10px;
+    color: #fff4ec;
+    font-family: Montserrat;
+    font-weight: bold;
+    font-size: larger;
+    padding: 16px 0;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    width: 100%;
+    margin: 32px 0;
+}
+

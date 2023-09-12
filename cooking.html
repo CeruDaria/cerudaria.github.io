@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chez Nam</title>
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen" charset="utf-8"/>
+    <link rel="shortcut icon" type="image/svg" href="images/Tomato.svg"/>
+    <script type="text/javascript" src="scripts/scripts.js"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img id="logo" src="images/Logo.svg" alt="Logo"/></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cooking.html">Cooking</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <a href="https://www.linkedin.com/in/nam-nguyen-130840203/" target="_blank"><img id="linkedin" src="images/linkedin.svg" alt="LinkedIn"/></a>
+    </header>
+    <section style="margin-top: 64px;"> 
+        <div id="progress-wrapper" onmouseleave="onLeavingProgressBar()">
+            <div id="progress">
+                <div id="progress-bar">&nbsp;</div>
+                <div id="on-hover-day" class="dotw"></div>
+                <div id="day1" class="dotw" onmouseover="onHoverProgressBar(this)">MON</div> 
+                <div id="day2" class="dotw" onmouseover="onHoverProgressBar(this)">TUE</div> 
+                <div id="day3" class="dotw" onmouseover="onHoverProgressBar(this)">WED</div> 
+                <div id="day4" class="dotw" onmouseover="onHoverProgressBar(this)">THU</div> 
+                <div id="day5" class="dotw" onmouseover="onHoverProgressBar(this)">FRI</div>
+            </div>
+        </div>
+        <div class="text">
+            <!-- <p class="page-title">Help Nam cook!</p> -->
+            <p style="font-size: smaller; text-align: center; padding-top: 16px;">
+                These are all Nam has in his fridge, once you pick one ingredient, it runs out and you cannot use it for the next day.<br/>
+                Hover on the progress bar to see which meal you suggested on whichever date.
+            </p>
+        </div>
+        <div class="main-area">
+            <table id="main-selector">
+                <tr>
+                    <td id="carrot-box">
+                        <div id="carrot-oos" class="out-of-stock"><p class="oos-text">Out of stock</p></div>
+                        <img class="food-selector" style="width:72px;" src="images/Carrot.svg" alt="carrot" onmouseover="showTooltip(this)" onclick="triggerOnIngClick(this)"/>
+                    </td>
+                    <td id="onion-box">
+                        <div id="onion-oos" class="out-of-stock"><p class="oos-text">Out of stock</p></div>
+                        <img class="food-selector" style="width:72px;" src="images/Onion.svg" alt="onion" onmouseover="showTooltip(this)" onclick="triggerOnIngClick(this)"/></td>
+                    <td id="tomato-box">
+                        <div id="tomato-oos" class="out-of-stock"><p class="oos-text">Out of stock</p></div>
+                        <img class="food-selector" style="width:72px;" src="images/Tomato.svg" alt="tomato" onmouseover="showTooltip(this)" onclick="triggerOnIngClick(this)"/></td>
+                    <td id="milk-box">
+                        <div id="milk-oos" class="out-of-stock"><p class="oos-text">Out of stock</p></div>
+                        <img class="food-selector" style="width:72px;" src="images/Milk.svg" alt="milk" onmouseover="showTooltip(this)" onclick="triggerOnIngClick(this)"/></td>
+                </tr>
+                <tr>
+                    <td id="pasta-box">
+                        <div id="pasta-oos" class="out-of-stock"><p class="oos-text">Out of stock</p></div>
+                        <img class="food-selector" style="width:72px;" src="images/Pasta.svg" alt="pasta" onmouseover="showTooltip(this)" onclick="triggerOnIngClick(this)"/></td>
+                    <td id="egg-box">
+                        <div id="egg-oos" class="out-of-stock"><p class="oos-text">Out of stock</p></div>
+                        <img class="food-selector" style="width:72px;" src="images/Egg.svg" alt="egg" onmouseover="showTooltip(this)" onclick="triggerOnIngClick(this)"/></td>
+                    <td id="cheese-box">
+                        <div id="cheese-oos" class="out-of-stock"><p class="oos-text">Out of stock</p></div>
+                        <img class="food-selector" style="width:72px;" src="images/Cheese.svg" alt="cheese" onmouseover="showTooltip(this)" onclick="triggerOnIngClick(this)"/></td>
+                    <td id="nori-box">
+                        <div id="nori-oos" class="out-of-stock"><p class="oos-text">Out of stock</p></div>
+                        <img class="food-selector" style="width:72px;" src="images/Nori.svg" alt="nori" onmouseover="showTooltip(this)" onclick="triggerOnIngClick(this)"/></td>
+                </tr>
+                <tr>
+                    <td id="potato-box">
+                        <div id="potato-oos" class="out-of-stock"><p class="oos-text">Out of stock</p></div>
+                        <img class="food-selector" style="width:72px;" src="images/Potato.svg" alt="potato" onmouseover="showTooltip(this)" onclick="triggerOnIngClick(this)"/></td>
+                    <td id="rice-box">
+                        <div id="rice-oos" class="out-of-stock"><p class="oos-text">Out of stock</p></div>
+                        <img class="food-selector" style="width:72px;" src="images/Rice.svg" alt="rice" onmouseover="showTooltip(this)" onclick="triggerOnIngClick(this)"/></td>
+                    <td id="flour-box">
+                        <div id="flour-oos" class="out-of-stock"><p class="oos-text">Out of stock</p></div>
+                        <img class="food-selector" style="width:72px;" src="images/Flour.svg" alt="flour" onmouseover="showTooltip(this)" onclick="triggerOnIngClick(this)"/></td>
+                    <td id="mushroom-box">
+                        <div id="mushroom-oos" class="out-of-stock"><p class="oos-text">Out of stock</p></div>
+                        <img class="food-selector" style="width:72px;" src="images/Mushroom.svg" alt="mushroom" onmouseover="showTooltip(this)" onclick="triggerOnIngClick(this)"/></td>
+                </tr>
+                <tr>
+                    <td id="beans-box">
+                        <div id="beans-oos" class="out-of-stock"><p class="oos-text">Out of stock</p></div>
+                        <img class="food-selector" style="width:72px;" src="images/Beans.svg" alt="beans" onmouseover="showTooltip(this)" onclick="triggerOnIngClick(this)"/></td>
+                    <td id="corn-box">
+                        <div id="corn-oos" class="out-of-stock"><p class="oos-text">Out of stock</p></div>
+                        <img class="food-selector" style="width:72px;" src="images/Corn.svg" alt="corn" onmouseover="showTooltip(this)" onclick="triggerOnIngClick(this)"/></td>
+                    <td id="lettuce-box">
+                        <div id="lettuce-oos" class="out-of-stock"><p class="oos-text">Out of stock</p></div>
+                        <img class="food-selector" style="width:72px;" src="images/Lettuce.svg" alt="lettuce" onmouseover="showTooltip(this)" onclick="triggerOnIngClick(this)"/></td>
+                    <td id="bun-box">
+                        <div id="bun-oos" class="out-of-stock"><p class="oos-text">Out of stock</p></div>
+                        <img class="food-selector" style="width:72px;" src="images/Bun.svg" alt="bun" onmouseover="showTooltip(this)" onclick="triggerOnIngClick(this)"/></td>
+                </tr>
+            </table>
+            <div class="tooltip">
+                <div id="default-tooltip" class="tooltip-box">
+                    <p class="tooltip-title">Pick an ingredient</p>
+                    <p>Hover over an ingredient and decide whether Nam would enjoy cooking with it!</p>
+                </div>
+                <div id="carrot" class="tooltip-box">
+                    <a class='question' href='https://www.carrefour.fr/p/carottes-bio-carrefour-bio-3270190010074' type='button' target="_blank"><img src='images/shopping.svg' alt='shopping'/></a>
+                    <p class="tooltip-title">Carrot</p>
+                    <p class="shopping-cart">Shop for the same item as Nam's from the button on the right.</p>
+                    <p>A great source of vitamin A. Dicing them takes quite some time though because Nam bought a really small knife.</p>
+                </div>
+                <div id="onion" class="tooltip-box">
+                    <a class='question' href='https://www.carrefour.fr/p/oignons-jaunes-petit-prix-3276550374534'type='button' target="_blank"><img src='images/shopping.svg' alt='shopping'/></a>
+                    <p class="tooltip-title">Onion</p>
+                    <p class="shopping-cart">Shop for the same item as Nam's from the button on the right.</p>
+                    <p>Can be eaten raw or cooked. Nam cries a lot cutting onions because his knife isn't sharp enough.</p>
+                </div>
+                <div id="tomato" class="tooltip-box">
+                    <a class='question' href='https://www.carrefour.fr/p/tomates-rondes-en-grappe-vrac-3276552413026'type='button' target="_blank"><img src='images/shopping.svg' alt='shopping'/></a>
+                    <p class="tooltip-title">Tomato</p>
+                    <p class="shopping-cart">Shop for the same item as Nam's from the button on the right.</p>
+                    <p>Nam loves a ripe, fresh and juicy tomato as a snack. Many traditional Vietnamese dishes use tomatoes.</p>
+                </div>
+                <div id="milk" class="tooltip-box">
+                    <a class='question' href='https://www.carrefour.fr/p/lait-demi-ecreme-bio-sterilise-uht-carrefour-bio-3270190216834'type='button' target="_blank"><img src='images/shopping.svg' alt='shopping'/></a>
+                    <p class="tooltip-title">Milk</p>
+                    <p class="shopping-cart">Shop for the same item as Nam's from the button on the right.</p>
+                    <p>Like all adults, Nam is slightly lactose intolerant. He does not like the sticky feeling in his mouth after drinking milk.</p>
+                </div>
+                <div id="pasta" class="tooltip-box">
+                    <a class='question' href='https://www.carrefour.fr/p/pates-tagliatelle-panzani-3038350054203'type='button' target="_blank"><img src='images/shopping.svg' alt='shopping'/></a>
+                    <p class="tooltip-title">Pasta</p>
+                    <p class="shopping-cart">Shop for the same item as Nam's from the button on the right.</p>
+                    <p>Nam's favorite has to be the tagliatelle. They resemble a type of traditional Vietnamese noodle native to Nam's hometown.</p>
+                </div>
+                <div id="egg" class="tooltip-box">
+                    <a class='question' href='https://www.carrefour.fr/p/oeufs-bio-de-plein-air-carrefour-bio-3245412846991'type='button' target="_blank"><img src='images/shopping.svg' alt='shopping'/></a>                    
+                    <p class="tooltip-title">Egg</p>
+                    <p class="shopping-cart">Shop for the same item as Nam's from the button on the right.</p>
+                    <p>Extremely versatile, can be used in any kind of dish. The best Banh mi is made with an omellete mixed with pork paté.</p>
+                </div>
+                <div id="cheese" class="tooltip-box">
+                    <a class='question' href='https://www.carrefour.fr/p/fromage-en-tranches-a-raclette-carrefour-original-3270190207702'type='button' target="_blank"><img src='images/shopping.svg' alt='shopping'/></a>                    
+                    <p class="tooltip-title">Cheese</p>
+                    <p class="shopping-cart">Shop for the same item as Nam's from the button on the right.</p>
+                    <p>Cheese is imported in Vietnam along with Korean food. Nam enjoyed his cheese eaten as a snack.</p>
+                </div>
+                <div id="nori" class="tooltip-box">
+                    <a class='question' href='https://www.carrefour.fr/p/algues-nori-grillees-pour-sushis-tanoshi-3229820765334'type='button' target="_blank"><img src='images/shopping.svg' alt='shopping'/></a>                    
+                    <p class="tooltip-title">Nori Seaweed</p>
+                    <p class="shopping-cart">Shop for the same item as Nam's from the button on the right.</p>
+                    <p>Nori seaweed is not that common in French supermarkets. Nam's favorite food before he turned vegetarian was sushi.</p>
+                </div>
+                <div id="potato" class="tooltip-box">
+                    <a class='question' href='https://www.carrefour.fr/p/pommes-de-terre-de-consommation-agata-3276554593641'type='button' target="_blank"><img src='images/shopping.svg' alt='shopping'/></a>                    
+                    <p class="tooltip-title">Potato</p>
+                    <p class="shopping-cart">Shop for the same item as Nam's from the button on the right.</p>
+                    <p>Potato is best made into a warm stew for the cold weather. French fries are often eaten with a serving of Vietnamese-style steak.</p>
+                </div>
+                <div id="rice" class="tooltip-box">
+                    <a class='question' href='https://www.carrefour.fr/p/riz-thai-parfume-12mn-carrefour-3270190124153'type='button' target="_blank"><img src='images/shopping.svg' alt='shopping'/></a>                    
+                    <p class="tooltip-title">Rice</p>
+                    <p class="shopping-cart">Shop for the same item as Nam's from the button on the right.</p>
+                    <p>Rice is every Asian family's staple cereal. Nam doesn't like rice very much, unfortunately.</p>
+                </div>
+                <div id="flour" class="tooltip-box">
+                    <a class="question" href="https://www.carrefour.fr/p/farine-de-ble-bio-t65-carrefour-bio-3270190128724" type="button"><img src="images/shopping.svg" alt="shopping"/></a>
+                    <p class="tooltip-title">Flour</p>
+                    <p class="shopping-cart">Shop for the same item as Nam's from the button on the right.</p>
+                    <p>Bread is Nam's favorite thing in the world. In Vietnam, bread is made into Banh mi, eaten with steaks or dipped into soups.</p>
+                </div>
+                <div id="mushroom" class="tooltip-box">
+                    <a class='question' href='https://www.carrefour.fr/p/champignons-bruns-paris-sans-pesticides-filiere-qualite-carrefour-3523680394612'type='button' target="_blank"><img src='images/shopping.svg' alt='shopping'/></a>                    
+                    <p class="tooltip-title">Mushroom</p>
+                    <p class="shopping-cart">Shop for the same item as Nam's from the button on the right.</p>
+                    <p>Mushrooms, especially Shittake mushrooms, are dried and used extensively in traditional meals in Vietnam, such as those during Tet.</p>
+                </div>
+                <div id="beans" class="tooltip-box">
+                    <a class='question' href='https://www.carrefour.fr/p/haricots-blancs-a-la-tomate-carrefour-classic-3560070181933'type='button' target="_blank"><img src='images/shopping.svg' alt='shopping'/></a>                    
+                    <p class="tooltip-title">Beans</p>
+                    <p class="shopping-cart">Shop for the same item as Nam's from the button on the right.</p>
+                    <p>Aquafaba can substitute for eggs in certain baking recipes. Canned beans tend to contain too much sodium, however.</p>
+                </div>
+                <div id="corn" class="tooltip-box">
+                    <a class='question' href='https://www.carrefour.fr/p/mais-sans-sucres-ajoutes-carrefour-classic-3560071139902'type='button' target="_blank"><img src='images/shopping.svg' alt='shopping'/></a>                    
+                    <p class="tooltip-title">Corn</p>
+                    <p class="shopping-cart">Shop for the same item as Nam's from the button on the right.</p>
+                    <p>Corn is best eaten with sticky rice as breakfast. Not many traditional Vietnamese dishes use corn.</p>
+                </div>
+                <div id="lettuce" class="tooltip-box">
+                    <a class='question' href='https://www.carrefour.fr/p/salades-laitue-sucrine-3276559525470'type='button' target="_blank"><img src='images/shopping.svg' alt='shopping'/></a>                    
+                    <p class="tooltip-title">Lettuce</p>
+                    <p class="shopping-cart">Shop for the same item as Nam's from the button on the right.</p>
+                    <p>Vietnamese eat a side salad with every traditional dish like Pho or Bo Bun. Lettuce is good for your skin and keeps you healthy.</p>
+                </div>
+                <div id="bun" class="tooltip-box">
+                    <a class='question' href='https://www.carrefour.fr/p/pains-hamburger-graines-jacquet-3029330070047'type='button' target="_blank"><img src='images/shopping.svg' alt='shopping'/></a>                    
+                    <p class="tooltip-title">Burger Bun</p>
+                    <p class="shopping-cart">Shop for the same item as Nam's from the button on the right.</p>
+                    <p>You can get burger buns pretty cheap here in France. You can make a quick cheese burger with a burger bun for lazy days.</p>
+                </div>
+                <div id="tick1" class="tick-box">&nbsp;</div>
+                <div id="tick2" class="tick-box">&nbsp;</div>
+                <div id="tick3" class="tick-box">&nbsp;</div>
+                <div id="countertop" class="part-of-tooltip">
+                    <h1>Selected ingredients</h1>
+                    <ol style="margin-top: 0;">
+                        <li id="slot1"></li>
+                        <li id="slot2"></li>
+                        <li id="slot3"></li>
+                    </ol>
+                </div>
+                <div id="button-area" class="part-of-tooltip">
+                    <button id="start-cooking" onclick="onClickSubmitButton()" class="dish-buttons">
+                        START COOKING
+                    </button>
+                </div>
+                <div id="overlay">
+                    <div id="cooking-done">
+                        <div id="dish-area">
+                            <img id="not" class="dish" src="images/Not.svg" alt="not-a-dish"/>
+                            <img id="pizza" class="dish" src="images/Pizza.svg" alt="pizza"/>
+                            <img id="kimbab" class="dish" src="images/Kimbab.svg" alt="kimbab"/>
+                            <img id="mpasta" class="dish" src="images/MPasta.svg" alt="mushroom-pasta"/>
+                            <img id="soup" class="dish" src="images/Soup.svg" alt="vegetable-soup"/>
+                            <img id="salad" class="dish" src="images/Salad.svg" alt="fresh-salad"/>
+                            <img id="burger" class="dish" src="images/Burger.svg" alt="cheese-burger"/>
+                            <img id="fries" class="dish" src="images/Fries.svg" alt="fries"/>
+                            <img id="omelette" class="dish" src="images/Omelette.svg" alt="spanish-omelette"/>
+                            <img id="mystery" class="dish" src="images/Mystery.svg" alt="mystery"/>
+                            <img id="abomination" class="dish" src="images/Abomination.svg" alt="abomination"/>
+                        </div>
+                        <div id="dish-text">
+                            <h4 id="intro" class="dish-intro" style="text-align: center; margin-bottom: 0; font-size: small;"></h4>
+                            <p id="dish-title"></p>
+                            <p id="desc" class="dish-desc"></p>
+
+                            <button id="game-continue" class="dish-buttons overlay-buttons" onclick="nextGame()">
+                                <p>NEXT DAY</p>
+                                <p class="button-tooltip">Click here to continue to the next day</p>
+                            </button>
+                            <button id="game-over" class="dish-buttons overlay-buttons" onclick="window.location.reload();">
+                                <p>THIS IS THE END...</p>
+                                <p class="button-tooltip">Click here to restart</p>
+                            </button>
+                            <a id="game-win" class="dish-buttons overlay-buttons" href="won.html" type="button">
+                                <p>SEE YOUR RESULTS</p>
+                                <p class="button-tooltip">Click here to see if Nam likes your meal plan.</p>
+                            </a>
+                            <a id="game-lose" class="dish-buttons overlay-buttons" href="lost.html" type="button">
+                                <p>SEE YOUR RESULTS</p>
+                                <p class="button-tooltip">Click here to see if Nam likes your meal plan.</p>
+                            </a>
+                        </div>
+                        &nbsp;
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div>
+        <img class="bottom-left" style="width: 500px;" src="images/Lettuce.svg" alt=""/>
+        <img class="bottom-right" style="width: 500px;" src="images/Lettuce.svg" alt=""/>
+    </div>
+    <footer>
+        <p style="text-align: center; padding-top: 32px; font-size: small;">
+            Copyright &copy; Nam Nguyen 2021
+        </p>
+    </footer>
+</body>
+</html>
