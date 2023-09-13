@@ -16,6 +16,9 @@ let dishes = {
     burger: ["bun,cheese,lettuce", "Cheese Burger", 7],
     fries: ["potato", "Fries", 5],
     omelette: ["egg,onion,potato", "Spanish Omelette", 9],
+    cotc: ["corn", "Corn on the Cob", 5],
+    raclette: ["cheese,lettuce,potato", "Raclette", 9],
+    cburger: ["bun,cheese", "Cheese Burger", 6],
     not: ["not", "Not Quite A Meal", 3],
     mystery: ["mystery", "Mystery Meal", 0],
     abomination: ["abomination", "ABOMINATION!", 0]
