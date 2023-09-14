@@ -11,7 +11,7 @@ let dishes = {
     pizza: ["cheese,flour,tomato", "Pizza", 9],
     kimbab: ["egg,nori,rice", "Kimbab", 7],
     mpasta: ["mushroom,pasta", "Mushroom Pasta", 6],
-    soup: ["carrot,onion,potato", "Vegetable Soup", 8],
+    soup: ["carrot,onion,beans", "Vegetable Soup", 8],
     salad: ["lettuce,onion,tomato", "Fresh Salad", 7],
     burger: ["bun,cheese,lettuce", "Cheese Burger XL", 7],
     fries: ["potato", "Fries", 5],
